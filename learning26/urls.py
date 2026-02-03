@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from . import views   
+from . import views 
+from django.urls import include
 
 urlpatterns = [
     path('', views.contactus),
@@ -13,4 +14,6 @@ urlpatterns = [
     path("recap/",views.recap),
     path("recipe/",views.recipe),
     path("iplteams/",views.iplteams),
+    #app level url config
+    path("student/",include("student.urls"))
 ]
